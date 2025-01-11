@@ -21,13 +21,19 @@ abstract class controller extends \electronic\core\controller\controller
             'data'  => new collection(),
             'alert' => new collection(),
         ]);
+        if( ((int)date('m') == 12 && (int)date('d') > 15) || (int)date('m') == 1 && (int)date('d') < 15){
+            $imgLogo = 'logo_buhot4etru_NY_red.png';
+        }else{
+            $imgLogo = 'logo_buhot4etru_transp_2023.png';
+        } 
         $this->title(config::globals('title'));
         $this->alert();
         $this->data['lang'] = config::globals('lang');
         $this->data['title'] = lang('global', 'title');       
         $this->data['return'] = $this->return;
-        $this->data['vueAssetsJs'] = preg_grep('~\.(js)$~', scandir(ROOT . '/public/vue/dist/assets'));
-        $this->data['vueAssetsCss'] = preg_grep('~\.(css)$~', scandir(ROOT . '/public/vue/dist/assets'));
+        $this->data['vueAssetsJs'] = preg_grep('~\.(js)$~', scandir(ROOT . '/public/dist/assets'));
+        $this->data['vueAssetsCss'] = preg_grep('~\.(css)$~', scandir(ROOT . '/public/dist/assets'));
+        $this->data['imgLogo'] = $imgLogo;
     }
 
     protected function bc(string $name, string $url = '')

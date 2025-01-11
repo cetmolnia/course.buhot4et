@@ -1,6 +1,12 @@
 <script setup>
 import { ref } from 'vue';
+
 let items = ref(JSON.parse(document.getElementById('courseApi').text));
+console.log(
+    JSON.parse(document.getElementById('courseApi').text)
+);
+let screenWidth = window.screen.width
+let screenHeight = window.screen.height
 
 function NormalDate(date){
     let d = new Date(Date.parse(date));
@@ -11,7 +17,6 @@ function NormalPrice(int){
     return new Intl.NumberFormat("ru").format(int);
 }
 
-console.log(JSON.parse(document.getElementById('courseApi').text));
 </script>
 
 <template>
@@ -20,21 +25,23 @@ console.log(JSON.parse(document.getElementById('courseApi').text));
             <meta itemprop="name" content="Список курсов повышения квалификации и профпереподготовки">
             <div class="card my-3">
                 <div class="row g-0">
-
-                    <div class="col-md-10">
+                    <div class="col-md-2">
+                        <img :src="'https://budget-academy.ru/' + item.img" class="img-fluid rounded-start img-block">
+                    </div>
+                    <div class="col-md-8">
                         <div class="card-body" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
                             <h2 class="card-title">
-                                <span class="badge rounded-pill text-bg-danger">{{ item.course_programm.name }}</span>
+                                <span class="badge rounded-pill text-bg-danger me-3">{{ item.course_programm.name }}</span>
                                 <span class="badge rounded-pill text-bg-dark"><i class="bi bi-clock"></i> {{ item.duration }} ч.</span>
                             </h2>
                             <h2 class="card-title text-lilac" itemprop="name">
-                                <a :href="'/courses/info/' + item.slug">{{ item.course_type.name }}</a>
+                                <a :href="'/courses/info/' + item.slug">{{ item.name }}</a>
                             </h2>
                             <p class="card-text">{{ item.desc }}</p>
                             <p class="card-text text-secondary fw-bold">
                                 <i class="bi bi-hand-thumbs-up"></i> Выдается Удостоверение о повышении квалификации на 144 ч.</p>
                             <a itemprop="url" :href="'/courses/info/' + item.slug"
-                                class="btn btn-outline-danger" role="button">
+                                class="btn btn-outline-danger me-3" role="button">
                                 <i class="bi bi-file-earmark-text"></i>
                                 Программа курса
                             </a>
@@ -56,3 +63,12 @@ console.log(JSON.parse(document.getElementById('courseApi').text));
     </div>
 
 </template>
+
+<style>
+    .img-block{
+        height: 100%;
+        object-fit: cover; 
+        object-position: center; 
+        max-width: 100%
+    }
+</style>

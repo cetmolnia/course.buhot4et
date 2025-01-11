@@ -1,0 +1,302 @@
+/*!
+Theme Name: buhot4et
+Theme URI: http://buhot4et.ru/
+Author: Grewi
+Author URI: http://grewi.ru
+Description: Тема для блога компании buhot4et
+Version: 1.0.1
+Tested up to: 7.3
+Requires PHP: 7.3
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: buhot4et
+
+*/
+
+button {
+	box-shadow: 0 0 0 !important;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #444;
+}
+
+.nav-top {
+	background-color: #C60000;
+	/* background-color: #000000; */
+}
+
+.nav-top-li {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	text-shadow: 0 1px 1px #2D2020;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-bottom-style: none;
+	transition: 0.5s;
+}
+
+.head-menu li {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	text-shadow: 0 1px 1px #2D2020;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-bottom-style: none;
+	transition: 0.5s;
+}
+
+.nav-top-li:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.head-menu li:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.t-menu {
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.76em;
+	color: #000;
+	text-shadow: none;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+.t-menu:hover {
+	color: #000 !important;
+	text-decoration: underline !important;
+}
+
+.menu-footer {
+	width: 100%;
+}
+
+.btn-lk {
+	font-family: 'Roboto', sans-serif;
+	background-color: #fff;
+	color: #000;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.btn-lk:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+.btn-otchet:hover {
+	font-family: 'Roboto', sans-serif;
+	transition: 0.5s;
+}
+
+.btn-otchet:hover {
+	background-color: #ff8533;
+	color: #fff;
+}
+
+.tab-active {
+	background-color: #C60000;
+	/* background-color: #000000; */
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.8em;
+	color: #fff;
+}
+
+.tab-active:hover {
+	color: #fff !important;
+	text-decoration: underline;
+	border-color: #C60000 !important;
+}
+
+.tags {
+	font-size: 0.7em;
+	transition: 0.5s;
+}
+
+.tags:hover {
+	color: #C60000;
+}
+
+.index-title-card {
+	text-decoration: none;
+	color: #C60000;
+	font-size: 0.8em;
+	transition: 0.5s;
+}
+
+.index-title-card:hover {
+	color: #C60000;
+}
+
+.index-title-card-col {
+	text-decoration: none;
+	color: #444;
+	font-size: 0.65em;
+	transition: 0.5s;
+}
+
+.index-title-card:hover {
+	color: #C60000;
+}
+
+.index-card-col {
+	color: #444;
+	font-size: 0.8em;
+}
+
+.index-h3-card-col {
+	line-height: 1;
+}
+
+.single-title {
+	font-size: 1.6em;
+	color: #C60000;
+}
+
+.pagination_index .nav-links {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.pagination_index .nav-links a,
+.pagination_index .nav-links span {
+	padding: 5px;
+	border: 1px solid #ccc;
+	margin: 0px 2px;
+	border-radius: 4px;
+	min-width: 30px;
+	display: flex;
+	justify-content: center;
+	transition: 0.5s;
+}
+
+.current {
+	background-color: #C60000;
+	color: #fff;
+}
+
+.pagination_index .nav-links a:hover {
+	border-color: #C60000;
+	color: #C60000;
+}
+
+.wp-img-page {
+	overflow: hidden;
+	margin-bottom: 25px;
+	box-shadow: 0 0 8px 1px #000;
+	width: 250px;
+	float: left;
+	margin-right: 20px;
+}
+
+.nav_post .nav-links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav_post .nav-links a {
+	color: #C60000;
+}
+
+.nav_post {
+	margin: 10px 0;
+	padding: 10px 5px;
+	border: 1px solid #ccc;
+}
+
+.column-card-wr {
+	overflow: hidden;
+	position: relative;
+}
+
+.read-next {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #C60000AB;
+	border-radius: 5px 0 0 0;
+	opacity: 0;
+	transition: 1s;
+}
+
+.read-next a {
+	font-size: 0.8em;
+	color: #fff;
+	padding: 5px;
+}
+
+.column-card-wr:hover .read-next {
+	opacity: 1;
+}
+
+@media (max-width: 768px) {
+	.wp-img-page {
+		width: 100%;
+		display: block;
+        float: none;
+	}
+}
+
+.grCheck input+label {
+	background: #ddd;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0 5px;
+	margin: 0 5px;
+	transition: 0.5s;
+	cursor: pointer;
+	font-size: 0.8em;
+}
+
+.grCheck input[type="checkbox"]:checked+label {
+	color: #fff;
+	background: #C60000;
+}
+
+.grCheck input[type="checkbox"]:not(:checked)+label {
+	/* color:red;	 */
+}
+
+.useravatar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #ccc;
+	border-radius: 3px;
+	margin: 20px;
+	margin-top: 0;
+	color: #777;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.colNameUser {
+	border-bottom: 1px dashed #ccc;
+	display: flex;
+	align-items: end;
+	margin-bottom: 5px;
+	font-style: italic;
+	color: #777;
+}
+
+.content a{
+	color: #C60000;
+	text-decoration: underline;
+}
