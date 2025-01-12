@@ -1,10 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-
-let items = ref(JSON.parse(document.getElementById('courseApi').text));
-console.log(
-    JSON.parse(document.getElementById('courseApi').text)
-);
+// var viewContent = ref(false);
 let screenWidth = window.screen.width
 let screenHeight = window.screen.height
 
@@ -16,11 +12,12 @@ function NormalDate(date){
 function NormalPrice(int){
     return new Intl.NumberFormat("ru").format(int);
 }
-
+console.log(apiData.value);
 </script>
 
-<template>
-    <div v-for="item in items">
+<template >
+    123456
+    <div v-for="item in apiData">
         <div v-if="item.platform_course.view_lending == 1" class="col-12" itemscope="" itemtype="https://schema.org/ItemList">
             <meta itemprop="name" content="Список курсов повышения квалификации и профпереподготовки">
             <div class="card my-3">
