@@ -15,7 +15,7 @@
         justify-content: center;
     }
     .loading div {
-        background: #fff;
+        /* background: #fff; */
         padding: 10px;
         border: 1px solid #444;
         color: #444;

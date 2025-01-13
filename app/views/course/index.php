@@ -1,5 +1,5 @@
 <use layout="index" />
 
 <block name="index">
-    <div id="app"></div>
+    <div id="course" data-slug="<?=$slug?>"></div>
 </block>

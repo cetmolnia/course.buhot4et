@@ -1,19 +1,17 @@
-<?php
-
-namespace app\controllers\index;
-
+<?php 
+namespace app\controllers\course;
 use app\controllers\controller;
 use electronic\core\view\view;
+use system\core\app\app;
 
-class indexController extends controller
+class courseController extends controller
 {
-
-    public function index()
+    public function index(app $app)
     {
-
-        $this->title('Главная страница');
-        // $this->data['courseApi'] = $this->curl();
-        new view('index/index', $this->data);
+        $this->title('');
+        $slug = $app->getparams->slug;
+        $this->data['slug'] = $slug;
+        new view('course/index', $this->data);
     }
 
     public function data()
@@ -37,6 +35,4 @@ class indexController extends controller
 
         return $html;
     }
-
-
 }

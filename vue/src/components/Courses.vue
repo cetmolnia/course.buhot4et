@@ -1,6 +1,8 @@
 <script setup>
-import { ref } from 'vue';
-// var viewContent = ref(false);
+import { inject } from 'vue';
+
+const apiData = inject('apiData')
+
 let screenWidth = window.screen.width
 let screenHeight = window.screen.height
 
@@ -12,13 +14,11 @@ function NormalDate(date){
 function NormalPrice(int){
     return new Intl.NumberFormat("ru").format(int);
 }
-console.log(apiData.value);
 </script>
 
 <template >
-    123456
     <div v-for="item in apiData">
-        <div v-if="item.platform_course.view_lending == 1" class="col-12" itemscope="" itemtype="https://schema.org/ItemList">
+        <div  class="col-12" itemscope="" itemtype="https://schema.org/ItemList">
             <meta itemprop="name" content="Список курсов повышения квалификации и профпереподготовки">
             <div class="card my-3">
                 <div class="row g-0">
@@ -66,6 +66,6 @@ console.log(apiData.value);
         height: 100%;
         object-fit: cover; 
         object-position: center; 
-        max-width: 100%
+        max-width: 100%;
     }
 </style>

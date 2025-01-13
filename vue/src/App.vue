@@ -1,36 +1,44 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, provide } from 'vue';
 import Courses from './components/Courses.vue'
 import Loading from './components/Loading.vue';
-let apiUrl = 'https://budget-academy.ru/api/courses?key=35fnb4d3g5n43dg5n4';
 
-console.log(apiUrl);
-apiData = ref({});
 let viewLoad = ref(true);
-let viewContent = ref(false);
+let viewIndex = ref(false);
 
-const xhr = new XMLHttpRequest();
-xhr.open("GET", apiUrl);
- 
-xhr.onreadystatechange = () => {
-    if (xhr.readyState == 4) {                  // если запрос завершен
-        if (xhr.status == 200) { 
-            apiData.value = JSON.parse(xhr.responseText);
-            console.log(ref(apiData.value));
-            viewLoad.value = false;
-            viewContent.value = true;
-            // console.log(viewContent);
-        } else {                                // иначе выводим текст статуса
-            console.log("Server response: ", xhr.statusText);
-        }
-    }
-};
-xhr.send(); 
+let apiUrl = '/data';
+let apiData = ref({});
+
+    provide('apiData', apiData);
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        mode: 'no-cors',
+    })
+        .then(response => {
+            if (response.ok) {
+                response.json().then(d => {
+                    apiData.value = d;
+                    viewLoad.value = false;
+                    viewIndex.value = true;
+                });
+            } else {
+                response.text().then(d => {
+                    console.log('error', d);
+                });
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
 </script>
 
 <template>
-    {{ viewContent }}
-    <div v-if="viewContent">
+    <div v-if="viewIndex">
         <Courses />
     </div>
     <div v-if="viewLoad">
